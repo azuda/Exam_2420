@@ -53,7 +53,16 @@ users
 **Output of find_users v1:**
 ![p4](Images/p4_output.png)
 
+```bash
+#!/bin/bash
 
+printf "Regular users on the system are:\n"
+grep ':[1-5][0-9][0-9][0-9]:' /etc/passwd | awk -F: '{print $1 " " $3 " " $7}' | tee /etc/motd
+
+printf "\nUsers currently logged in are:\n"
+users | tee -a /etc/motd
+```
+![p4](Images/p4_motd.png)
 
 ## Part 5
 
