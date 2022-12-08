@@ -4,10 +4,84 @@
 
 *A01316218*
 
-## a
+## Part 1
 
-a
+```
+sudo apt update
+sudo apt upgrade
+```
 
-## b
+## Part 2
 
-b
+> :%s/V/C/g
+
+> :%s/eco/echo/g
+
+> :%s/numbs/:digit:/g
+
+![p2](images/p2.png)
+
+## Part 3
+
+`man journalctl -K "boot"`
+![p3](images/p3_boot.png)
+
+`man journalctl -K "priority"`
+![p3](images/p3_prio.png)
+
+`man journalctl -K "json"`
+![p3](images/p3_o.png)
+![p3](images/p3_json.png)
+
+**Working command:**
+![p3](images/p3_command.png)
+
+
+## Part 4
+
+The grep command:
+`grep ';[1-5][0-9][0-9][0-9]:' /etc/passwd`
+
+
+
+## Part 5
+
+`sudo vim /etc/systemd/system/p5.service`
+```
+[Unit]
+Description=Run script from part 4
+
+[Service]
+ExecStart=/bin/bash /home/vagrant/find_users
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**Status of p5.service:**
+![p5](images/p5_status.png)
+
+
+## Part 6
+
+`sudo vim /etc/systemd/system/p5.timer`
+
+```
+[Unit]
+Description=Timer for p5.service
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1d
+Unit=p5.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+**Start, enable, status for p5.timer:**
+![p6](images/p6_status.png)
+
+**Status of p5.service:**
+![p6](images/p6_service_status.png)
