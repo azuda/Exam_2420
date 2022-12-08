@@ -51,8 +51,10 @@ users
 ```
 
 **Output of find_users v1:**
+
 ![p4](Images/p4_output.png)
 
+**find_users script version 2:**
 ```bash
 #!/bin/bash
 
@@ -62,6 +64,9 @@ grep ':[1-5][0-9][0-9][0-9]:' /etc/passwd | awk -F: '{print $1 " " $3 " " $7}' |
 printf "\nUsers currently logged in are:\n"
 users | tee -a /etc/motd
 ```
+
+**Output of find_users v2:**
+
 ![p4](Images/p4_motd.png)
 
 ## Part 5
