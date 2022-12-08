@@ -19,22 +19,22 @@ sudo apt upgrade
 
 > :%s/numbs/:digit:/g
 
-![p2](images/p2.png)
+![p2](Images/p2.png)
 
 ## Part 3
 
 `man journalctl -K "boot"`
-![p3](images/p3_boot.png)
+![p3](Images/p3_boot.png)
 
 `man journalctl -K "priority"`
-![p3](images/p3_prio.png)
+![p3](Images/p3_prio.png)
 
 `man journalctl -K "json"`
-![p3](images/p3_o.png)
-![p3](images/p3_json.png)
+![p3](Images/p3_o.png)
+![p3](Images/p3_json.png)
 
 **Working command:**
-![p3](images/p3_command.png)
+![p3](Images/p3_command.png)
 
 
 ## Part 4
@@ -59,7 +59,7 @@ WantedBy=multi-user.target
 ```
 
 **Status of p5.service:**
-![p5](images/p5_status.png)
+![p5](Images/p5_status.png)
 
 
 ## Part 6
@@ -81,7 +81,7 @@ WantedBy=timers.target
 ```
 
 **Start, enable, status for p5.timer:**
-![p6](images/p6_status.png)
+![p6](Images/p6_status.png)
 
 **Status of p5.service:**
-![p6](images/p6_service_status.png)
+![p6](Images/p6_service_status.png)
